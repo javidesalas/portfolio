@@ -1,17 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useContext } from "react";
+import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import App from "./App";
+import { HashRouter as Router } from "react-router-dom";
+import { GraphQLClient, ClientContext } from "graphql-hooks";
+
+import LangProvider from "./components/shared/LangContext";
+import ThemeProvider from "./components/shared/ThemeContext"
+import HomeProvider from "./components/shared/HomeContext";
+
+const client = new GraphQLClient({
+	url: "https://graphql.datocms.com/",
+	headers: {
+		Authorization: "Bearer 2e8e7670bfb204462d7794de400b60",
+	},
+});
+
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<Router>
+		<React.StrictMode>
+			<ClientContext.Provider value={client}>
+				<LangProvider>
+					<ThemeProvider>
+						
+							<App />
+						
+					</ThemeProvider>
+				</LangProvider>
+			</ClientContext.Provider>
+		</React.StrictMode>
+	</Router>,
+	document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
