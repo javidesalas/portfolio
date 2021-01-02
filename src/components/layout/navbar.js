@@ -20,57 +20,62 @@ const Navigation = () => {
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
-				<Nav>
-					<Nav.Link
-						href=""
-						className={inEnglish && "disabled"}
-						onClick={toggleLang}
-					>
-						EN
-					</Nav.Link>
-					/
-					<Nav.Link
-						href=""
-						className={!inEnglish && "disabled"}
-						onClick={toggleLang}
-					>
-						ES
-					</Nav.Link>
-				</Nav>
-				<Nav>
-					<Nav.Link
-						href=""
-						className={(theme === "light" && "disabled")}
-						onClick={()=>setTheme("light")}
-					>
-						LIGHT
-					</Nav.Link>
-					/
-					<Nav.Link
-						href=""
-						className={(theme === "dark" && "disabled")}
-						onClick={()=>setTheme("dark")}
-					>
-						DARK
-					</Nav.Link>
-					<Nav.Link
-						href=""
-						className={(theme === "neon" && "disabled")}
-						onClick={()=>setTheme("neon")}
-					>
-						NEON
-					</Nav.Link>
-				</Nav>
 				<Nav className="ml-auto">
-					<Nav.Link key="home" href="">
-						{inEnglish ? "Home" : "Inicio"}
-					</Nav.Link>
-					<Nav.Link key="about" href="">
-						{inEnglish ? "About Me" : "Sobre Mí"}
-					</Nav.Link>
-					<Nav.Link key="projects" href="">
-						{inEnglish ? "Projects" : "Proyectos"}
-					</Nav.Link>
+					<Nav.Item className="ml-auto">
+						<span
+							className={"nav-link" + inEnglish && "disabled"}
+							onClick={toggleLang}
+						>
+							{" "}
+							EN{" "}
+						</span>
+						/
+						<span
+							className={"nav-link" + !inEnglish && "disabled"}
+							onClick={toggleLang}
+						>
+							{" "}
+							ES{" "}
+						</span>
+					</Nav.Item>
+
+					<Nav.Item>
+						<span
+							className={"nav-link" + (theme === "light") && "disabled"}
+							onClick={() => setTheme("light")}
+						>
+							LIGHT
+						</span>
+						/
+						<span
+							className={"nav-link" + (theme === "dark") && "disabled"}
+							onClick={() => setTheme("dark")}
+						>
+							DARK
+						</span>
+						/
+						<span
+							className={"nav-link" + (theme === "neon") && "disabled"}
+							onClick={() => setTheme("neon")}
+						>
+							NEON
+						</span>
+					</Nav.Item>
+					<Nav.Item>
+						<Nav.Link key="home" href="">
+							{inEnglish ? "Home" : "Inicio"}
+						</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
+						<Nav.Link key="about" href="">
+							{inEnglish ? "About Me" : "Sobre Mí"}
+						</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
+						<Nav.Link key="projects" href="">
+							{inEnglish ? "Projects" : "Proyectos"}
+						</Nav.Link>
+					</Nav.Item>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>

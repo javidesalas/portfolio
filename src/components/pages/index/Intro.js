@@ -12,7 +12,6 @@ const Intro = ({
       
    
 	const { inEnglish }  = useContext(LangContext)
-	console.log(textHeroEn, );
     
     return (
 			<section>
