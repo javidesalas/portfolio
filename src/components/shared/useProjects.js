@@ -28,17 +28,16 @@ const useProjects = () => {
     if (loading) return false
     if (error) return false
     
-  const projectsContent = data.allProjects.map(elm => ({
-    projectName: elm.projectName,
-    stack: elm.stack,
-    projectLink: elm.projectLink,
-    githubLink: elm.githubLink,
-    featured: elm.featured,
-    descriptionEs: elm.descriptionEs,
-    descriptionEn: elm.descriptionEn,
-    projectPic: elm.projectPic
-
-  }))
+  const projectsContent = data.allProjects.map((elm) => ({
+		projectName: elm.projectName,
+		stack: elm.stack,
+		projectLink: elm.projectLink,
+		githubLink: elm.githubLink,
+		featured: elm.featured,
+		descriptionEs: elm.descriptionEs,
+		descriptionEn: elm.descriptionEn,
+		projectPic: elm.projectPic.responsiveImage
+	}));
  
     return projectsContent;
 };

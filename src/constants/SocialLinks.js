@@ -1,4 +1,6 @@
-const footerLinks = [
+import React from 'react';
+
+const social = [
 	{
 		text: "LinkedIn",
 		link: "https://www.linkedin.com/in/javidesalas/",
@@ -15,7 +17,20 @@ const footerLinks = [
 		text: "twitter",
 		link: "https://www.twitter.com/chinostrike",
 	},
-	
 ];
 
-export default footerLinks
+const SocialLinks = () => {
+	return (
+		<ul>
+			{social.map((link, index) => (
+				<li key={`social${index}`}>
+					<a href={link.link}>
+						{link.text}
+					</a>
+				</li>
+			))}
+		</ul>
+	);
+};
+
+export default SocialLinks;

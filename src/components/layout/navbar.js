@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
+import {Link } from 'react-router-dom'
 import { LangContext } from '../shared/LangContext';
 import { ThemeContext } from '../shared/ThemeContext';
 import { HomeContext } from '../shared/HomeContext'
 
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+
 
 import { ReactComponent as Logo } from './logo-navbar-white.svg'
 
@@ -14,14 +14,12 @@ const Navigation = () => {
 	
 
 	return (
-		<Navbar expand="lg" bg="dark" variant="dark">
-			<Navbar.Brand href="">
+		<div expand="lg" bg="dark" variant="dark">
+			<div href="">
 				<Logo style={{ height: 40, width: 100 }} />
-			</Navbar.Brand>
-			<Navbar.Toggle aria-controls="basic-navbar-nav" />
-			<Navbar.Collapse id="basic-navbar-nav">
-				<Nav className="ml-auto">
-					<Nav.Item className="ml-auto">
+			</div>
+			<nav className="ml-auto">
+					<div className="ml-auto">
 						<span
 							className={"nav-link" + inEnglish && "disabled"}
 							onClick={toggleLang}
@@ -37,9 +35,9 @@ const Navigation = () => {
 							{" "}
 							ES{" "}
 						</span>
-					</Nav.Item>
+					</div>
 
-					<Nav.Item>
+					<div>
 						<span
 							className={"nav-link" + (theme === "light") && "disabled"}
 							onClick={() => setTheme("light")}
@@ -60,25 +58,25 @@ const Navigation = () => {
 						>
 							NEON
 						</span>
-					</Nav.Item>
-					<Nav.Item>
-						<Nav.Link key="home" href="">
+					</div>
+					<div>
+						<Link key="home" href="">
 							{inEnglish ? "Home" : "Inicio"}
-						</Nav.Link>
-					</Nav.Item>
-					<Nav.Item>
-						<Nav.Link key="about" href="">
+						</Link>
+					</div>
+					<div>
+						<Link key="about" href="">
 							{inEnglish ? "About Me" : "Sobre Mí"}
-						</Nav.Link>
-					</Nav.Item>
-					<Nav.Item>
-						<Nav.Link key="projects" href="">
+						</Link>
+					</div>
+					<div>
+						<Link key="projects" href="">
 							{inEnglish ? "Projects" : "Proyectos"}
-						</Nav.Link>
-					</Nav.Item>
-				</Nav>
-			</Navbar.Collapse>
-		</Navbar>
+						</Link>
+					</div>
+				</nav>
+			</div>
+		
 	);
 };
 
