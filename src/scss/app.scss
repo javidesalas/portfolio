@@ -61,7 +61,8 @@ li {
 // SECTIONS
 //=================
 
-//NAVIGATION
+
+//LAYOUT NAVIGATION
 
 .nav {
     position: fixed;
@@ -206,3 +207,49 @@ margin-top: 10px
 .content{
     margin-top: 100px;
 }
+
+//PAGES - INDEX
+//INTRO
+
+.intro {
+    width: 100%;
+    padding: 0 15px;
+    font-family: $text-font;
+    font-weight: 200;
+    font-size: 1em;
+}
+
+.intro__hero{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "javi javi ."
+    "de text text"
+    "salas salas .";
+}
+
+.intro__hero__item {
+    height: 100px;
+}
+
+.intro__hero__item--javi{
+    grid-area: javi;
+}
+
+.intro__hero__item--de{
+    grid-area: de;
+}
+
+.intro__hero__item--salas{
+    grid-area: salas;
+}
+
+.intro__hero__text{
+    grid-area: text;
+    align-self: end;
+    font-family: $title-font;
+    font-weight: 400;
+    font-size: 0.8em;
+}
+
