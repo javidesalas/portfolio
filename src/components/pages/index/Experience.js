@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { LangContext } from "../../shared/LangContext";
 import { ThemeContext } from "../../shared/ThemeContext";
 
@@ -11,6 +11,7 @@ const Experience = ({
 	marketingEs,
 }) => {
 	const { inEnglish } = useContext(LangContext);
+	const [courtain, setCourtain] = useState(false)
 
 	const handleViewer = e => {
 		const headers = Array.of(...document.querySelectorAll(".experience__header__item"));
@@ -23,13 +24,15 @@ const Experience = ({
 		
 		const transformation = `translateX(${parseInt(e.currentTarget.id) * -100}vw)`
 		container.style.setProperty("transform", transformation);
+
+		setCourtain(1)
 		
-		viewers.forEach((elm) =>
-		elm.classList.add("experience__viewer__container__item--move")
-		);
-		viewers.forEach((elm) =>
-			elm.classList.remove("experience__viewer__container__item--move")
-		);
+		// viewers.forEach((elm) =>
+		// elm.classList.add("experience__viewer__container__item--move")
+		// );
+		// viewers.forEach((elm) =>
+		// 	elm.classList.remove("experience__viewer__container__item--move")
+		// );
 	}
 
 	return (
@@ -64,7 +67,11 @@ const Experience = ({
 						{inEnglish ? "Design" : "Diseño"}
 					</h3>
 				</div>
-				<div className="experience__viewer">
+				<div
+					className="experience__viewer"
+					courtain={courtain}
+					onAnimationEnd={() => setCourtain(0)}
+				>
 					<div className="experience__viewer__container">
 						<article className="experience__viewer__container__item">
 							{inEnglish ? devEn : devEs}

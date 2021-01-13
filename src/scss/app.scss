@@ -389,29 +389,34 @@ li {
 
 	.experience__viewer {
 		width: 100%;
+		border: $broken-black 2px solid;
 	}
 
 	.experience__viewer__container {
-	transition: all 0.1s 2s ;
+	transition: translateX 0.1s 2s ;
+	
 	
 }
+	.experience__viewer[courtain="1"]{
+		animation: courtain 4s ;
+	
+	}
 
 	.experience__viewer__container__item {
 		width: 55vw;
 		margin-right: 45vw;
-		border: $broken-black 2px solid;
 		overflow: hidden;
 	}
 	
-	.experience__viewer__container__item--move {
-		animation: courtain 4s ;
-	}
 
 	@keyframes courtain {
 		0% {
 			height: 100%
 		}
-		50% {
+		40% {
+			height: 0%
+		}
+		60%{
 			height: 0%
 		}
 		100%{
