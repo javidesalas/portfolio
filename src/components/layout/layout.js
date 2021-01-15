@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useContext } from "react";
 
-import Navbar from './Navbar'
-import Footer from './Footer'
+import { ThemeContext } from "../shared/ThemeContext";
 
-const layout = props => {
-    return (
-        <>
-            <Navbar />
-            <div className='content'>
-                {props.children}
-            </div>
-            <Footer />
-        </>
-    ); 
+import { themer } from "../shared/helpers";
+
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+
+const Layout = (props) => {
+const { theme } = useContext(ThemeContext);
+
+	return (
+		<>
+			<div
+				className={themer("fake-background", "fake-background", theme)}
+			></div>
+			<Navbar />
+			<div className="content">{props.children}</div>
+			<Footer />
+		</>
+	);
 };
 
-export default layout;
+export default Layout;

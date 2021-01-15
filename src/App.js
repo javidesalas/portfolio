@@ -1,6 +1,6 @@
 import React ,{useState} from 'react';
 import { Switch, Route } from 'react-router-dom'
-import './scss/app.scss'
+import './scss/app-dark.scss'
 
 import Layout from './components/layout/Layout'
 import Index from './components/pages/index/index'

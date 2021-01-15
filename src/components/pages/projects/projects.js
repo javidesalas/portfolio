@@ -12,11 +12,11 @@ const Projects = ({ projects, keyPrefix }) => {
 			<h2 className="projects__title">
 				{inEnglish ? "Projects" : "Proyectos"}
 			</h2>
-			<ul>
+			<div>
 				{projects.map((project) => (
 					<ProjectCard {...project} key={project.projectName} />
 				))}
-			</ul>
+			</div>
 		</section>
 	);
 };
