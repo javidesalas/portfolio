@@ -25,7 +25,7 @@ const Index = () => {
 				)}
 				{featuredProjects && (
 					<>
-						<Projects projects={featuredProjects} />
+					<Projects projects={featuredProjects} keyPrefix={'feat'}/>
 					</>
 				)}
 			</div>

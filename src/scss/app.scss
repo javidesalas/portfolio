@@ -251,11 +251,15 @@ li {
 }
 
 @media (min-width: $lg) {
+	.intro {
+		margin: 10vh 0
+	}
 	.intro__hero {
+		grid-template-columns: auto auto minmax(100px, max-content) auto auto;
 		grid-template-areas:
 			". javi de salas ."
 			". . text text text";
-		margin-top: 10vw;
+		margin-top: 12vw;
 	}
 	.intro__hero__item {
 		height: 14vw;
@@ -267,6 +271,7 @@ li {
 	.intro__hero__item--de {
 		margin: 0 4vw;
 		justify-self: center;
+		max-width: 170px;
 	}
 	.intro__hero__item--salas {
 		justify-self: start;
@@ -280,11 +285,12 @@ li {
 	}
 
 	.intro__description {
+		margin-top: 7vh;
 		display: grid;
 		grid-template-columns: 1fr 2fr 2fr;
 		grid-template-rows: 1fr;
 
-		margin-bottom: 20px;
+	
 	}
 	.intro__description__text {
 		grid-column-start: 2;
@@ -369,6 +375,9 @@ li {
 }
 
 @media (min-width: $lg) {
+	.experience {
+		margin: 10vh 0
+	}
 	.experience__title {
 		width: 80vw;
 		margin-left: 20vw;
@@ -424,3 +433,79 @@ li {
 		}
 	}
 }
+
+//PROJECTS
+
+.projects {
+	width: 100%;
+	font-family: $text-font;
+	font-weight: 200;
+	font-size: 0.8em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.projects__title {
+	font-family: $title-font;
+	text-transform: uppercase;
+	color: white;
+	background-color: $medium-grey;
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.project{
+	margin: 5vw;
+	padding: 10px;
+}
+
+.project__pic{
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+.project__title {
+	font-family: $title-font;
+}
+
+.project__stack {
+	padding-left: 5px;
+	font-size: 1em;
+	
+	font-weight: 600;
+	background-color: $light-grey;
+	text-transform: uppercase;
+}
+
+.project__stack__item::after{
+	content: " > ";
+	color: white;
+	height: 100%;
+}
+
+.project__stack__item:last-child::after{
+	content: "";
+	color: white;
+	height: 100%;
+}
+
+@media (min-width: $lg) {
+	.projects{
+		margin: 10vh 0
+	}
+
+	.projects__title {
+		width: 80vw;
+		margin-right: 20vw;
+		padding-right: 15px;
+		text-align: end;
+	}
+}
+	
+
+// .project__description
+
+// .project__link
