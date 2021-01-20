@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LangContext } from "../shared/LangContext";
 import { ThemeContext } from "../shared/ThemeContext";
@@ -15,12 +15,39 @@ const Navigation = () => {
 	const { inEnglish, toggleLang } = useContext(LangContext);
 	const { theme, setTheme } = useContext(ThemeContext);
 
+	 useEffect(() => {
+			const head = document.head;
+		 let link = document.createElement("link");
+		 
+		 let stylePath 
+
+		 switch (theme) {
+				case "light":
+					stylePath = "/css/main-light.css";
+					break;
+				case "dark":
+					stylePath = "/css/main-dark.css";
+					break;
+			}
+
+			link.type = "text/css";
+			link.rel = "stylesheet";
+			link.href = `${process.env.PUBLIC_URL + stylePath}`
+		 console.dir(stylePath)
+		 
+			head.appendChild(link);
+
+			return () => {
+				head.removeChild(link);
+			};
+		}, [theme]);
+
 	const [showSidebar, setShowSidebar] = useState(false)
 	const toggleSidebar = () => setShowSidebar(!showSidebar)
 
 	return (
 		<>
-		<nav className={themer("nav", "nav", theme)}>
+		<nav className="nav">
 			<div className="nav__logo-box">
 				<Link to="/" className="nav__item">
 					<Logo className="nav__logo" />

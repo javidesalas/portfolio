@@ -15,6 +15,9 @@ body {
   margin: 0;
   padding: 0;
   white-space: pre-line;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+  font-size: 0.8rem;
 }
 
 a,
@@ -42,10 +45,7 @@ li {
   width: 100vw;
   height: 100vh;
   z-index: -100;
-}
-
-.fake-background--dark {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .nav {
@@ -60,21 +60,9 @@ li {
   justify-content: space-between;
   font-family: Sen, sans-serif;
   font-weight: 400;
-  font-size: 1em;
-}
-
-.nav--light {
+  font-size: 1rem;
   background-color: #000000;
   color: #ffffff;
-}
-
-.nav--dark {
-  background-color: #232323;
-  color: #ffffff;
-}
-
-.nav--neon {
-  background-color: lightpink;
 }
 
 .nav__logo-box {
@@ -111,14 +99,11 @@ li {
 .nav__link {
   cursor: pointer;
   text-transform: uppercase;
-}
-
-.nav__link--light {
   color: inherit;
 }
 
-.nav__link--light:hover,
-.nav__link--light:active {
+.nav__link:hover,
+.nav__link:active {
   color: #b30000;
 }
 
@@ -137,27 +122,16 @@ li {
   height: 100%;
   width: 100%;
   transition: all 1s ease-out;
-  background-color: #808080;
+  display: none;
+  background-color: #000000;
   font-family: Sen, sans-serif;
   font-weight: 400;
-  font-size: 1em;
-}
-
-.nav__sidebar--light {
-  background-color: #000000;
-  color: white;
-}
-
-.nav__sidebar--dark {
-  background-color: #232323;
-  color: white;
-}
-
-.nav__sidebar--neon {
-  background-color: pink;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 .nav__sidebar--show {
+  display: block;
   transform: translateX(0);
 }
 
@@ -189,7 +163,7 @@ li {
   width: 100%;
   font-family: "Open Sans", sans-serif;
   font-weight: 200;
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 .intro__hero {
@@ -199,10 +173,7 @@ li {
 
 .intro__hero__item {
   height: 30vw;
-}
-
-.intro__hero__item--dark {
-  fill: #efefef;
+  fill: #000000;
 }
 
 .intro__hero__item--javi {
@@ -222,18 +193,14 @@ li {
   align-self: end;
   font-family: Sen, sans-serif;
   font-weight: 400;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   padding-bottom: 3vw;
-}
-
-.intro__hero__text--dark {
-  color: #efefef;
 }
 
 .intro__description__text {
   padding: 8px;
   margin: 5px;
-  border: solid 1px;
+  background-color: white;
 }
 
 .intro_description__background {
@@ -273,17 +240,9 @@ li {
   .intro__hero__text {
     width: 100%;
     padding: 5px 0 5px 10px;
-    font-size: 1em;
-  }
-
-  .intro__hero__text--light {
+    font-size: 1rem;
     background-color: #000000;
     color: white;
-  }
-
-  .intro__hero__text--dark {
-    background-color: #808080;
-    color: #efefef;
   }
 
   .intro__description {
@@ -296,9 +255,9 @@ li {
   .intro__description__text {
     grid-column-start: 2;
     grid-row-start: 1;
-    background-color: white;
     z-index: 5;
     margin: 0px;
+    border: solid 1px;
   }
 
   .intro__description__background {
@@ -308,19 +267,18 @@ li {
     grid-row-start: 1;
     width: 100%;
     height: 100%;
-    background: url(../components/shared/pattern.svg) repeat;
-    background-color: pink;
-    background-size: 20px;
+    background: url(../pattern-white.svg) repeat;
+    background-color: #dedede;
+    background-size: 30px;
     z-index: 3;
     transform: translateX(-10px) translateY(10px);
-    opacity: 50%;
   }
 }
 .experience {
   width: 100%;
   font-family: "Open Sans", sans-serif;
   font-weight: 200;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -349,17 +307,22 @@ li {
   margin: 5px 10px 5px 0px;
 }
 
+.experience__header__item:hover,
+.experience__header__item:active {
+  color: #b30000;
+}
+
 .experience__header__item::before {
   content: "> ";
 }
 
-.experience__header__item--active {
-  text-decoration: underline;
+.experience__header__item--active::before {
+  content: "> ";
+  color: #b30000;
 }
 
 .experience__viewer {
   overflow: hidden;
-  width: 90vw;
 }
 
 .experience__viewer__container {
@@ -371,6 +334,8 @@ li {
 .experience__viewer__container__item {
   width: 90vw;
   margin-right: 10vw;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -435,7 +400,7 @@ li {
   width: 100%;
   font-family: "Open Sans", sans-serif;
   font-weight: 200;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -468,7 +433,7 @@ li {
 
 .project__text__stack {
   padding-left: 5px;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 600;
   background-color: #dedede;
   text-transform: uppercase;

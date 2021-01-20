@@ -11,29 +11,36 @@ const Experience = ({
 	marketingEs,
 }) => {
 	const { inEnglish } = useContext(LangContext);
-	const [courtain, setCourtain] = useState(false)
+	const [courtain, setCourtain] = useState(false);
 
-	const handleViewer = e => {
-		const headers = Array.of(...document.querySelectorAll(".experience__header__item"));
-		const container = document.querySelector(".experience__viewer__container")
-			const viewers = Array.of(...document.querySelectorAll(".experience__viewer__container__item"))
-		
+	const handleViewer = (e) => {
+		const headers = Array.of(
+			...document.querySelectorAll(".experience__header__item")
+		);
+		const container = document.querySelector(".experience__viewer__container");
+		const viewers = Array.of(
+			...document.querySelectorAll(".experience__viewer__container__item")
+		);
 
-		headers.forEach((elm) => elm.classList.remove("experience__header__item--active"));
+		headers.forEach((elm) =>
+			elm.classList.remove("experience__header__item--active")
+		);
 		e.currentTarget.classList.add("experience__header__item--active");
-		
-		const transformation = `translateX(${parseInt(e.currentTarget.id) * -100}vw)`
+
+		const transformation = `translateX(${
+			parseInt(e.currentTarget.id) * -100
+		}vw)`;
 		container.style.setProperty("transform", transformation);
 
-		setCourtain(1)
-		
+		setCourtain(1);
+
 		// viewers.forEach((elm) =>
 		// elm.classList.add("experience__viewer__container__item--move")
 		// );
 		// viewers.forEach((elm) =>
 		// 	elm.classList.remove("experience__viewer__container__item--move")
 		// );
-	}
+	};
 
 	return (
 		<section className="experience">
@@ -76,9 +83,12 @@ const Experience = ({
 						<article className="experience__viewer__container__item">
 							{inEnglish ? devEn : devEs}
 						</article>
-						<article className="experience__viewer__container__item">
-							{inEnglish ? marketingEs : marketingEn}
-						</article>
+						<article
+							className="experience__viewer__container__item"
+							dangerouslySetInnerHTML={{
+								__html: inEnglish ? marketingEn : marketingEs,
+							}}
+						></article>
 						<article className="experience__viewer__container__item">
 							{inEnglish ? designEn : designEs}
 						</article>
