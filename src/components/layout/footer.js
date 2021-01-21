@@ -2,11 +2,15 @@ import React from 'react';
 import SocialLinks from '../../constants/SocialLinks'
 
 const footer = () => {
+	const year = new Date().getFullYear();
     return (
-			<footer>
-				<nav variant="dark" bg="dark">
+			<footer className="footer">
+				<nav>
 					<SocialLinks />
-				</nav>
+			</nav>
+			<p>
+				{`© ${year} Javier de Salas`}
+			</p>
 			</footer>
 		);
 };

@@ -13,7 +13,7 @@ const { theme } = useContext(ThemeContext);
 	return (
 		<>
 			<div
-				className={themer("fake-background", "fake-background", theme)}
+				className="fake-background"
 			></div>
 			<Navbar />
 			<div className="content">{props.children}</div>

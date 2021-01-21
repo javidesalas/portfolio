@@ -16,14 +16,14 @@ const ProjectCard = ({
 	const { inEnglish } = useContext(LangContext);
 	console.log(projectPic)
 	return (
-		
-			<article className="project">
+		<article className="project">
+			<div className="project__pic">
 				<img
-					className="project__pic"
 					srcSet={projectPic.srcSet}
 					alt={projectPic.alt}
 				/>
-				<div className="project__text">
+			</div>
+			<div className="project__text">
 				<h3 className="project__text__title">{projectName}</h3>
 				<p className="project__text__stack">
 					{stack.map((tech) => (
@@ -32,17 +32,18 @@ const ProjectCard = ({
 						</span>
 					))}
 				</p>
-				<p className="project__text__description">{inEnglish ? descriptionEn : descriptionEs}</p>
+				<p className="project__text__description">
+					{inEnglish ? descriptionEn : descriptionEs}
+				</p>
 				<a href={githubLink} className="project__text__link">
 					Github
 				</a>
 				<a href={projectLink} className="project__text__link">
 					{" "}
 					{inEnglish ? "Project" : "Proyecto"}{" "}
-			</a>
+				</a>
 			</div>
-			</article>
-		
+		</article>
 	);
 
 	
