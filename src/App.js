@@ -19,9 +19,7 @@ const App = () => {
 		const body = document.body;
 		
 		body.className = ""
-
-		//body.classList.add(body)
-
+		
 		body.classList.add(theme)
 
 	}, [theme]);

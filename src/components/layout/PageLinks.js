@@ -12,17 +12,17 @@ const PageLinks = ({ placement }) => {
 	return (
 		<ul className={placement}>
 			<li className="nav__item">
-				<Link key="home" href="" className="nav__link">
+				<Link to="" key="home" className="nav__link">
 					{inEnglish ? "Home" : "Inicio"}
 				</Link>
 			</li>
 			<li className="nav__item">
-				<Link key="about" href="" className="nav__link">
+				<Link to="about" key="about" className="nav__link">
 					{inEnglish ? "About Me" : "Sobre Mí"}
 				</Link>
 			</li>
 			<li className="nav__item">
-				<Link key="projects" href="" className="nav__link">
+				<Link to="projects" key="projects" className="nav__link">
 					{inEnglish ? "Projects" : "Proyectos"}
 				</Link>
 			</li>

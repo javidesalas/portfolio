@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
-const about = () => {
+import { LangContext } from '../../shared/LangContext';
+import useAbout from "../../shared/useAbout";
+
+
+const About = () => {
+    const content = useAbout()
+    const { aboutEn, aboutEs, aboutPic } = content
+    const { inEnglish } = useContext(LangContext)
     return (
-        <div>
-            MARI
-        </div>
-    );
+			<div>
+				{content && (
+					<>
+						<img srcSet={aboutPic.srcSet} alt={aboutPic.alt} />
+						<article
+							dangerouslySetInnerHTML={{
+								__html: inEnglish ? aboutEn : aboutEs,
+							}}
+						></article>
+					</>
+				)}
+			</div>
+		);
 };
 
-export default about;
+export default About;

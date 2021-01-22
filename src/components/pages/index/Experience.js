@@ -34,12 +34,6 @@ const Experience = ({
 
 		setCourtain(1);
 
-		// viewers.forEach((elm) =>
-		// elm.classList.add("experience__viewer__container__item--move")
-		// );
-		// viewers.forEach((elm) =>
-		// 	elm.classList.remove("experience__viewer__container__item--move")
-		// );
 	};
 
 	return (
@@ -80,18 +74,24 @@ const Experience = ({
 					onAnimationEnd={() => setCourtain(0)}
 				>
 					<div className="experience__viewer__container">
-						<article className="experience__viewer__container__item">
-							{inEnglish ? devEn : devEs}
-						</article>
+						<article
+							className="experience__viewer__container__item"
+							dangerouslySetInnerHTML={{
+								__html: inEnglish ? devEn : devEs,
+							}}
+						></article>
 						<article
 							className="experience__viewer__container__item"
 							dangerouslySetInnerHTML={{
 								__html: inEnglish ? marketingEn : marketingEs,
 							}}
 						></article>
-						<article className="experience__viewer__container__item">
-							{inEnglish ? designEn : designEs}
-						</article>
+						<article
+							className="experience__viewer__container__item"
+							dangerouslySetInnerHTML={{
+								__html: inEnglish ? designEn : designEs,
+							}}
+						></article>
 					</div>
 				</div>
 			</div>
