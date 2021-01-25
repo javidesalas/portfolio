@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { LangContext } from "../../shared/LangContext";
 import { ThemeContext } from "../../shared/ThemeContext";
 
@@ -33,7 +34,6 @@ const Experience = ({
 		container.style.setProperty("transform", transformation);
 
 		setCourtain(1);
-
 	};
 
 	return (
@@ -74,24 +74,34 @@ const Experience = ({
 					onAnimationEnd={() => setCourtain(0)}
 				>
 					<div className="experience__viewer__container">
-						<article
-							className="experience__viewer__container__item"
-							dangerouslySetInnerHTML={{
-								__html: inEnglish ? devEn : devEs,
-							}}
-						></article>
-						<article
-							className="experience__viewer__container__item"
-							dangerouslySetInnerHTML={{
-								__html: inEnglish ? marketingEn : marketingEs,
-							}}
-						></article>
-						<article
-							className="experience__viewer__container__item"
-							dangerouslySetInnerHTML={{
-								__html: inEnglish ? designEn : designEs,
-							}}
-						></article>
+						<article className="experience__viewer__container__item">
+							<div
+								dangerouslySetInnerHTML={{
+									__html: inEnglish ? devEn : devEs,
+								}}
+							></div>
+							<Link to="/about">{inEnglish ? "ABOUT ME" : "SOBRE MÍ"}</Link>
+						</article>
+						<article className="experience__viewer__container__item">
+							<div
+								dangerouslySetInnerHTML={{
+									__html: inEnglish ? marketingEn : marketingEs,
+								}}
+							></div>
+							<a
+								href="https://www.linkedin.com/in/javidesalas/"
+								target="_blank"
+							>
+								{inEnglish ? "GO TO LINKEDIN" : "IR A LINKEDIN"}
+							</a>
+						</article>
+						<article className="experience__viewer__container__item">
+							<div
+								dangerouslySetInnerHTML={{
+									__html: inEnglish ? designEn : designEs,
+								}}
+							></div>
+						</article>
 					</div>
 				</div>
 			</div>

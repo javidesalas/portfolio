@@ -58,13 +58,13 @@ const PageLinks = ({ placement }) => {
 				>
 					DARK
 				</span>
-				/
+				{/* /
 				<span
 					className={`nav__link ${theme === "neon" && "nav__link--disabled"}`}
 					onClick={() => setTheme("neon")}
 				>
 					NEON
-				</span>
+				</span> */}
 			</li>
 		</ul>
 	);

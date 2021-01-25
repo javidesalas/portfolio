@@ -11,6 +11,7 @@ import "./scss/app.scss";
 import Layout from "./components/layout/Layout";
 import Index from "./components/pages/index/index";
 import About from "./components/pages/about/About";
+import ProjectsWrapper from "./components/pages/projects/ProjectsWrapper";
 
 const App = () => {
 	const { theme } = useContext(ThemeContext);
@@ -26,11 +27,11 @@ const App = () => {
 
 	return (
 		<>
-
 			<Layout>
 				<Switch>
 					<Route path="/" exact render={() => <Index />} />
 					<Route path="/about" render={() => <About />} />
+					<Route path="/projects" render={() => <ProjectsWrapper />} />
 				</Switch>
 			</Layout>
 		</>

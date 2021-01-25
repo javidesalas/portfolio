@@ -2,7 +2,6 @@ import React, {useContext }from 'react';
 
 
 import { LangContext } from "../../shared/LangContext";
-import { ThemeContext } from "../../shared/ThemeContext";
 
 const ProjectCard = ({
 	projectName,

@@ -24,7 +24,7 @@ const SocialLinks = () => {
 		<ul className="footer__link-box">
 			{social.map((link, index) => (
 				<li key={`social${index}`}>
-					<a href={link.link} className="footer__link">
+					<a href={link.link} className="footer__link" target="_blank">
 						{link.text}
 					</a>
 				</li>

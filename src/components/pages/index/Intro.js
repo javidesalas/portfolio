@@ -36,13 +36,18 @@ const Intro = ({ textHeroEn, textHeroEs, descriptionEn, descriptionEs }) => {
 						theme
 					)}
 				/>
-				<p className={themer("intro__hero__text", "intro__hero__text", theme)}>
+				<article className="intro__hero__text">
 					{inEnglish ? textHeroEn : textHeroEs}
-				</p>
+				</article>
 			</div>
 			<div className="intro__description">
-				<article className="intro__description__text">
-					{inEnglish ? descriptionEn : descriptionEs}
+				<article
+					className="intro__description__text"
+					dangerouslySetInnerHTML={{
+						__html: inEnglish ? descriptionEn : descriptionEs,
+					}}
+				>
+					
 				</article>
 				<div className="intro__description__background"></div>
 			</div>
