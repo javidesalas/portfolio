@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 
-
-import Fader from "../../shared/Fader"
+import Fader from "../../shared/Fader";
 import { LangContext } from "../../shared/LangContext";
 
 const ProjectCard = ({
@@ -12,17 +11,17 @@ const ProjectCard = ({
 	descriptionEs,
 	descriptionEn,
 	projectPic,
-	index
+	index,
 }) => {
 	const { inEnglish } = useContext(LangContext);
-	console.log(projectPic)
+	console.log(projectPic);
 	return (
-		<Fader customClasses="project" direction={ index%2 === 0 ? "fadeInLeft" : "fadeInRight"}>
+		<Fader
+			customClasses="project"
+			direction={index % 2 === 0 ? "fadeInLeft" : "fadeInRight"}
+		>
 			<div className="project__pic">
-				<img
-					srcSet={projectPic.srcSet}
-					alt={projectPic.alt}
-				/>
+				<img srcSet={projectPic.srcSet} alt={projectPic.alt} />
 			</div>
 			<Fader customClasses="project__text" direction="fadeInUp">
 				<h3 className="project__text__title">{projectName}</h3>
@@ -33,9 +32,12 @@ const ProjectCard = ({
 						</span>
 					))}
 				</p>
-				<p className="project__text__description">
-					{inEnglish ? descriptionEn : descriptionEs}
-				</p>
+				<article
+					className="project__text__description"
+					dangerouslySetInnerHTML={{
+						__html: inEnglish ? descriptionEn : descriptionEs,
+					}}
+				></article>
 				<a href={githubLink} className="project__text__link">
 					Github
 				</a>
@@ -46,11 +48,6 @@ const ProjectCard = ({
 			</Fader>
 		</Fader>
 	);
-
-	
-	}
-	
+};
 
 export default ProjectCard;
-
-

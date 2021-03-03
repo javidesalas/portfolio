@@ -76,7 +76,7 @@ const Experience = ({
 									__html: inEnglish ? devEn : devEs,
 								}}
 							></div>
-							<Link to="/about">{inEnglish ? "ABOUT ME" : "SOBRE MÍ"}</Link>
+							<Link to="/about" className="">{inEnglish ? "ABOUT ME" : "SOBRE MÍ"}</Link>
 						</article>
 						<article className="experience__viewer__container__item">
 							<div
