@@ -3,6 +3,7 @@ import { ThemeContext } from "../shared/ThemeContext";
 
 import PageLinks from './PageLinks'
 import { themer } from "../shared/helpers";
+import SocialLinks from '../../constants/SocialLinks';
 
 
 const Sidebar = ({ showSidebar, toggleSidebar }) => {
@@ -24,7 +25,8 @@ const Sidebar = ({ showSidebar, toggleSidebar }) => {
 						{" "}
 						X{" "}
 					</div>
-					<PageLinks placement="nav__sidebar__link-box" />
+			<PageLinks placement="nav__sidebar__link-box" />
+			<SocialLinks placement="nav__sidebar__link-box"/>
 				</div>
 			
 		);

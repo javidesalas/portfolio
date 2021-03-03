@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { LangContext } from "../../shared/LangContext";
-import { ThemeContext } from "../../shared/ThemeContext";
 
 const Experience = ({
 	devEn,
@@ -19,9 +18,6 @@ const Experience = ({
 			...document.querySelectorAll(".experience__header__item")
 		);
 		const container = document.querySelector(".experience__viewer__container");
-		const viewers = Array.of(
-			...document.querySelectorAll(".experience__viewer__container__item")
-		);
 
 		headers.forEach((elm) =>
 			elm.classList.remove("experience__header__item--active")
@@ -91,6 +87,7 @@ const Experience = ({
 							<a
 								href="https://www.linkedin.com/in/javidesalas/"
 								target="_blank"
+								rel="noreferrer"
 							>
 								{inEnglish ? "GO TO LINKEDIN" : "IR A LINKEDIN"}
 							</a>

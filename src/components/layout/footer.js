@@ -6,11 +6,9 @@ const footer = () => {
     return (
 			<footer className="footer">
 				<nav>
-					<SocialLinks />
-			</nav>
-			<p>
-				{`© ${year} Javier de Salas`}
-			</p>
+					<SocialLinks placement="footer__link-box" />
+				</nav>
+				<p className="footer__copyright">{`© ${year} Javier de Salas`}</p>
 			</footer>
 		);
 };

@@ -1,6 +1,7 @@
-import React, {useContext }from 'react';
+import React, { useContext } from 'react';
 
 
+import Fader from "../../shared/Fader"
 import { LangContext } from "../../shared/LangContext";
 
 const ProjectCard = ({
@@ -11,18 +12,19 @@ const ProjectCard = ({
 	descriptionEs,
 	descriptionEn,
 	projectPic,
+	index
 }) => {
 	const { inEnglish } = useContext(LangContext);
 	console.log(projectPic)
 	return (
-		<article className="project">
+		<Fader customClasses="project" direction={ index%2 === 0 ? "fadeInLeft" : "fadeInRight"}>
 			<div className="project__pic">
 				<img
 					srcSet={projectPic.srcSet}
 					alt={projectPic.alt}
 				/>
 			</div>
-			<div className="project__text">
+			<Fader customClasses="project__text" direction="fadeInUp">
 				<h3 className="project__text__title">{projectName}</h3>
 				<p className="project__text__stack">
 					{stack.map((tech) => (
@@ -41,8 +43,8 @@ const ProjectCard = ({
 					{" "}
 					{inEnglish ? "Project" : "Proyecto"}{" "}
 				</a>
-			</div>
-		</article>
+			</Fader>
+		</Fader>
 	);
 
 	

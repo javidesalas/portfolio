@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useQuery } from 'graphql-hooks'
 
 const projectsQuery = `query projectsQuery {

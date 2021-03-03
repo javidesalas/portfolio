@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { HashRouter as Router } from "react-router-dom";
@@ -6,7 +6,6 @@ import { GraphQLClient, ClientContext } from "graphql-hooks";
 
 import LangProvider from "./components/shared/LangContext";
 import ThemeProvider from "./components/shared/ThemeContext"
-import HomeProvider from "./components/shared/HomeContext";
 
 const client = new GraphQLClient({
 	url: "https://graphql.datocms.com/",

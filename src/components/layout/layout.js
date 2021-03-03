@@ -1,15 +1,9 @@
-import React, { useContext } from "react";
-
-import { ThemeContext } from "../shared/ThemeContext";
-
-import { themer } from "../shared/helpers";
+import React from "react";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const Layout = (props) => {
-const { theme } = useContext(ThemeContext);
-
 	return (
 		<>
 			<div

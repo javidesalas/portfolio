@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { LangContext } from "../shared/LangContext";
 import { ThemeContext } from "../shared/ThemeContext";
 
-import { themer } from "../shared/helpers";
-
 const PageLinks = ({ placement }) => {
 	const { inEnglish, toggleLang } = useContext(LangContext);
 	const { theme, setTheme } = useContext(ThemeContext);
@@ -32,14 +30,14 @@ const PageLinks = ({ placement }) => {
 					className={`nav__link ${inEnglish && "nav__link--disabled"}`}
 					onClick={!inEnglish && toggleLang}
 				>
-					EN
+					ENG
 				</span>
 				/
 				<span
 					className={`nav__link ${!inEnglish && "nav__link--disabled"}`}
 					onClick={inEnglish && toggleLang}
 				>
-					ES
+					ESP
 				</span>
 			</li>
 

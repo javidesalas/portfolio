@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const social = [
 	{
@@ -14,17 +14,22 @@ const social = [
 		link: "mailto:javidesalas@gmail.com",
 	},
 	{
-		text: "twitter",
+		text: "Twitter",
 		link: "https://www.twitter.com/chinostrike",
 	},
 ];
 
-const SocialLinks = () => {
+const SocialLinks = ({ placement }) => {
 	return (
-		<ul className="footer__link-box">
+		<ul className={placement}>
 			{social.map((link, index) => (
-				<li key={`social${index}`}>
-					<a href={link.link} className="footer__link" target="_blank">
+				<li className="footer__link__li" key={`social${index}`}>
+					<a
+						href={link.link}
+						className="footer__link"
+						target="_blank"
+						rel="noreferrer"
+					>
 						{link.text}
 					</a>
 				</li>

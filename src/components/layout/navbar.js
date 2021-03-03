@@ -1,9 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState} from "react";
 import { Link } from "react-router-dom";
-import { LangContext } from "../shared/LangContext";
-import { ThemeContext } from "../shared/ThemeContext";
-
-import { themer } from "../shared/helpers";
 
 import Sidebar from "./Sidebar";
 import PageLinks from "./PageLinks";
@@ -11,36 +7,7 @@ import { ReactComponent as Logo } from "./logo-navbar-white.svg";
 import { ReactComponent as Burger } from "./burger-white.svg";
 
 const Navigation = () => {
-	const { inEnglish, toggleLang } = useContext(LangContext);
-	const { theme, setTheme } = useContext(ThemeContext);
-
-	// useEffect(() => {
-	// 	const head = document.head;
-	// 	let link = document.createElement("link");
-
-	// 	let stylePath;
-
-	// 	switch (theme) {
-	// 		case "light":
-	// 			stylePath = "/css/main-light.css";
-	// 			break;
-	// 		case "dark":
-	// 			stylePath = "/css/main-dark.css";
-	// 			break;
-	// 	}
-
-	// 	link.type = "text/css";
-	// 	link.rel = "stylesheet";
-	// 	link.href = `${process.env.PUBLIC_URL + stylePath}`;
-	// 	console.dir(stylePath);
-
-	// 	head.appendChild(link);
-
-	// 	return () => {
-	// 		head.removeChild(link);
-	// 	};
-	// }, [theme]);
-
+	
 	const [showSidebar, setShowSidebar] = useState(false);
 	const toggleSidebar = () => setShowSidebar(!showSidebar);
 
@@ -63,4 +30,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-//<div onClick={toggleLang}>PEPI</div>;
